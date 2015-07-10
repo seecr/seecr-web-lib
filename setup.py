@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 ## begin license ##
 #
 # "Seecr Web Lib" provides web libraries for web development.
@@ -23,8 +24,26 @@
 #
 ## end license ##
 
-from os.path import dirname, abspath, join
+from distutils.core import setup
 
-mydir = dirname(abspath(__file__))
-seecrWebLibPath = '/usr/share/seecr-web-lib'
-seecrWebLibPath = join(dirname(dirname(mydir)), 'usr-share') # DO_NOT_DISTRIBUTE
+version = '$Version: 0.1.x$'[9:-1].strip()
+
+from os import walk
+from os.path import join
+
+data_files = []
+for path, dirs, files in walk('usr-share'):
+    data_files.append((path.replace('usr-share', '/usr/share/seecr-web-lib'), [join(path, f) for f in files]))
+
+setup(
+    name='seecr-web-lib',
+    packages=['seecr-web-lib'],
+    data_files=data_files,
+    version=version,
+    url='http://www.seecr.nl',
+    author='Seecr',
+    author_email='info@seecr.nl',
+    description='Web libraries for web development',
+    long_description='Provides javascript libraries and css for web development'
+    platforms=['linux'],
+)
