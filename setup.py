@@ -35,9 +35,15 @@ data_files = []
 for path, dirs, files in walk('usr-share'):
     data_files.append((path.replace('usr-share', '/usr/share/seecr-web-lib'), [join(path, f) for f in files]))
 
+packages = []
+for path, dirs, files in walk('edurep'):
+    if '__init__.py' in files:
+        packagename = path.replace('/', '.')
+        packages.append(packagename)
+
 setup(
     name='seecr-web-lib',
-    packages=['seecr-web-lib'],
+    packages=packages,
     data_files=data_files,
     version=version,
     url='http://www.seecr.nl',
