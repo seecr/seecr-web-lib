@@ -36,7 +36,7 @@ for path, dirs, files in walk('usr-share'):
     data_files.append((path.replace('usr-share', '/usr/share/seecr-web-lib'), [join(path, f) for f in files]))
 
 packages = []
-for path, dirs, files in walk('edurep'):
+for path, dirs, files in walk('seecr'):
     if '__init__.py' in files:
         packagename = path.replace('/', '.')
         packages.append(packagename)
