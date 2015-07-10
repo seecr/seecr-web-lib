@@ -1,0 +1,78 @@
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Seecr Banner: CSS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Ideally you should be able to link this CSS file and add the following HTML
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEECR BANNER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id="seecr-banner" class="vcard">
+        <div class="wrap">
+            <h2>By <span class="org">Seecr</span></h2>
+            <p class="note">Software Craftsmanship</p>
+            <a class="url" href="http://seecr.nl" rel="me" title="Visit the Seecr website">Seecr - Software Craftsmanship</a>
+            <p>
+                A service by <span class="fn">Seecr</span>, <a href="mailto:info@seecr.nl" class="email">info@seecr.nl</a><br>
+                &nbsp;
+            </p>
+        </div>
+    </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ / SEECR BANNER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+.. This would add a Seecr Banner to the top of the page and align the text neatly
+
+- Sometimes the centered alignment of BODY{} might not be wanted
+- Sometimes the styles will probably need more styling reset
+You can add your own logo with:
+#seecr-banner a.url {
+    background: url("/image/logo.png") 0/200px no-repeat ;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+body {
+    min-width: 380px;
+    max-width: 840px;
+    margin: 0 auto 1em auto;
+}
+#main-content {
+	padding: 20px;
+}
+#seecr-banner {
+    width: 100%;
+    background-color: #202020; /* Fallback for when gradients are not supported */
+    background: -moz-linear-gradient(top, #2a2a2a, #010101);
+    background: -webkit-gradient(linear, center top, center bottom, from(#2a2a2a), to(#010101));
+    background: -o-linear-gradient(top, #2a2a2a, #010101);
+    background: linear-gradient(top, #2a2a2a, #010101);
+    height: 75px;
+    color: #FFF;
+    font-size: 11px;
+}
+#seecr-banner p {
+    margin: 0;
+    padding: 1em;
+    padding-top: 40px;
+    text-align: right;
+    font-family: "TitilliumText22LRegular", fixed;
+    height: 75px;
+}
+#seecr-banner p a.url { /** back fix old style banners **/
+	margin-top: -30px;
+	text-align: left;
+}
+#seecr-banner a.url {
+    margin: 1em;
+    height: 50px;
+    width: 200px;
+    float: left;
+    text-indent: -999em;
+    background: url("/images/logo.png") 0/100px no-repeat ;
+}
+#seecr-banner p a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/* Visually hide some elements */
+#seecr-banner h2,
+#seecr-banner p.note { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; }
