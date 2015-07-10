@@ -44,6 +44,6 @@ setup(
     author='Seecr',
     author_email='info@seecr.nl',
     description='Web libraries for web development',
-    long_description='Provides javascript libraries and css for web development'
+    long_description='Provides javascript libraries and css for web development',
     platforms=['linux'],
 )
