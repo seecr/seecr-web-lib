@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ## begin license ##
 #
 # "Seecr Web Lib" provides web libraries for web development.
